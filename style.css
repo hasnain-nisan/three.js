@@ -20,6 +20,10 @@ body {
   margin: 0px;
 }
 
+#canvas{
+  background: #747bff;
+}
+
 a {
   font-weight: 500;
   color: #646cff;

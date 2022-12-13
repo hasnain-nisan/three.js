@@ -2,6 +2,8 @@ import Box from "./js/three-js-basic/box";
 import Capsule from "./js/three-js-basic/capsule";
 import Cone from "./js/three-js-basic/cone";
 import boxes from "./js/three-js-basic/task/1";
+import Plane from "./js/three-js-basic/plane";
+import group from "./js/three-js-basic/task/2";
 
 var width = window.innerWidth;
 var height = window.innerHeight;
@@ -24,21 +26,15 @@ var scene = new THREE.Scene();
 
 //camera
 var camera = new THREE.PerspectiveCamera(viewAngle, width/height, nearClipping, farClipping);
-camera.position.set(0, 0, 10);
+camera.position.set(0, 3, 20);
 
 
-//add mesh to scene
-boxes.forEach((box) => {
-  scene.add(box)
-});
+// Geometry + Material = Mesh 
+
 
 //animation function
 const animate = () => {
-  boxes.forEach((box) => {
-    box.rotation.x += 0.01;
-    box.rotation.y += 0.01;
-    box.rotation.z += 0.02;
-  })
+  group.rotation.y += .01
   requestAnimationFrame(animate);
   renderer.render(scene, camera)
 }
